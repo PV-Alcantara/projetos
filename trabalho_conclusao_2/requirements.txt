@@ -1,0 +1,11 @@
+streamlit==1.50.0
+langchain==0.3.25
+langchain-openai==0.3.23
+langchain-core==0.3.65
+langchain-community==0.3.25
+pandas==2.3.0
+pandasql==0.7.3
+lxml==6.0.2
+requests==2.32.3
+numpy
+openpyxl

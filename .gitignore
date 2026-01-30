@@ -1,0 +1,20 @@
+.env
+credenciais.py
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Banco de dados local
+*.sqlite3
+*.db
+
+# Arquivos de backup
+*.bak
+*~ 
+
+# VSCode
+.vscode/
+
+creditcard.csv
