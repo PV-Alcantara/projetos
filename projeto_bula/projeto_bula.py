@@ -13,7 +13,7 @@ from dotenv import load_dotenv # Mantida para a execução do preprocessamento/c
 
 # Importações para criação do agente, mensagens e ferramentas estruturadas
 from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor, create_openai_functions_agent
+from langchain.agents import initialize_agent, AgentType, create_openai_functions_agent
 from langchain.tools import tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
@@ -145,9 +145,10 @@ def setup_agente_e_rag():
 
     agent = create_openai_functions_agent(llm, tools, prompt)
 
-    agent_executor = AgentExecutor(
+    agent_executor = initialize_agent(
         agent=agent,
         tools=tools,
+        agent_type=AgentType.OPENAI_FUNCTIONS,
         memory=main_memory,
         verbose=False, # Mantenha como False para Streamlit, use True para debug
         handle_parsing_errors=True
