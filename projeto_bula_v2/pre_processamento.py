@@ -9,7 +9,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.embeddings import init_embeddings
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone, ServerlessSpec
-
+from pathlib import Path
 
 # ========================================
 # 2️⃣ Carregar variáveis de ambiente
@@ -22,11 +22,14 @@ PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 # ========================================
 # 3️⃣ Carregar PDFs
 # ========================================
-pdf_dir = "pdfs"
+
+
+BASE_DIR = Path(__file__).resolve().parent
+pdf_dir = BASE_DIR / "pdfs"
+
 
 loader = PyPDFDirectoryLoader(pdf_dir)
 documents = loader.load()
-
 print(f"✅ {len(documents)} páginas carregadas")
 
 
