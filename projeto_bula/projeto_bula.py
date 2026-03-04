@@ -153,7 +153,7 @@ def setup_agente_e_rag():
     verbose=True,
     handle_parsing_errors=True
     )
-
+    
     print("--- SETUP CONCLUÍDO. AGENTE PRONTO. ---\n")
     return agent_executor
 
