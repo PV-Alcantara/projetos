@@ -1,8 +1,8 @@
 streamlit
-langchain
-langchain_openai
+langchain==0.2.16
+langchain-openai==0.1.23
 langchain-core
-langchain-community
+langchain-community==0.2.16
 python-dotenv
 pypdf
 chromadb
