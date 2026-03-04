@@ -2,10 +2,10 @@ import os
 import shutil
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader, PyMuPDFLoader #PyPDFLoader
-
+from langchain_chroma import Chroma
+#from langchain_community.vectorstores import Chroma
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 docs_folder = os.path.join(BASE_DIR, "bulas")
@@ -85,7 +85,7 @@ def criar_banco_vetorial():
             vectorstore.add_documents(batch)
             time.sleep(0.3)  # evita rate limit
 
-        vectorstore.persist()
+        
 
         print("✅ ChromaDB criado com sucesso!")
 
