@@ -9,6 +9,10 @@ __pycache__/
 # Banco de dados local
 *.sqlite3
 *.db
+!projeto_bula/chroma_db_bulas/
+!projeto_bula/chroma_db_bulas/**
+!projeto_bula/chroma_db_bulas/*.sqlite3
+
 
 # Arquivos de backup
 *.bak
