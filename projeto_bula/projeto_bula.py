@@ -31,7 +31,7 @@ from langchain_community.vectorstores import Chroma
 load_dotenv() 
 
 docs_folder = "bulas"
-BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 chroma_db_path = os.path.join(BASE_DIR, "chroma_db_bulas") 
 
 print("DEBUG: Variáveis e bibliotecas configuradas.")
