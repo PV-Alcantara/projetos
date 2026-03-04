@@ -5,7 +5,7 @@ langchain-core==0.3.65
 langchain-community==0.3.25
 python-dotenv
 pypdf
-chromadb
+chromadb==0.5.5
 
 
 
