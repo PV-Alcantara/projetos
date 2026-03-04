@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import DirectoryLoader, PyPDFLoaderpip
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
 
-load_dotenv()
-chave = os.getenv("api_key") 
-docs_folder = "bulas"
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+docs_folder = os.path.join(BASE_DIR, "bulas")
 chroma_db_path = "./chroma_db_bulas"
 
 def criar_banco_vetorial():
@@ -33,8 +33,9 @@ def criar_banco_vetorial():
     splits = text_splitter.split_documents(documents)
     print(f"Chunks criados: {len(splits)}")
 
-    # 3. Gerar Embeddings (Chamada de API cara)
-    embeddings = OpenAIEmbeddings(api_key=chave)
+    # 3. Gerar Embeddings (Chamada de API)
+    load_dotenv()
+    embeddings = OpenAIEmbeddings()
     
     # 4. Remover e Recriar (Garante que está atualizado)
     if os.path.exists(chroma_db_path):
