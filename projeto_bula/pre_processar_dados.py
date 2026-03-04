@@ -35,7 +35,12 @@ def criar_banco_vetorial():
 
     # 3. Gerar Embeddings (Chamada de API)
     load_dotenv()
-    embeddings = OpenAIEmbeddings()
+    chave = os.getenv("api_key")
+    print(f"API carregada? {'SIM ✅' if chave else 'NÃO ❌'}")
+
+    embeddings = OpenAIEmbeddings(
+    api_key=chave,
+    model="text-embedding-3-small")
     
     # 4. Remover e Recriar (Garante que está atualizado)
     if os.path.exists(chroma_db_path):
