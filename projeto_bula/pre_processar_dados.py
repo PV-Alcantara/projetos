@@ -9,7 +9,7 @@ from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 docs_folder = os.path.join(BASE_DIR, "bulas")
-chroma_db_path = "./chroma_db_bulas"
+chroma_db_path = os.path.join(BASE_DIR, "chroma_db_bulas") 
 
 def criar_banco_vetorial():
     print("INICIANDO CRIAÇÃO DO BANCO VETORIAL...")
