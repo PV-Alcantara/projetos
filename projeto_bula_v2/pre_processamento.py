@@ -64,7 +64,7 @@ print(f"✅ {len(vectors)} embeddings gerados")
 # ========================================
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-index_name = "bula-index"
+index_name = "ems-bula"
 
 # cria índice se não existir
 if index_name not in pc.list_indexes().names():

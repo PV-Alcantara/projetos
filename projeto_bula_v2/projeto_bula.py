@@ -34,7 +34,7 @@ def setup_rag():
     pc = Pinecone(api_key=PINECONE_API_KEY)
     print("Indexes:", pc.list_indexes().names())
 
-    index_name = "bula-index"
+    index_name = "ems-bula"
     index = pc.Index(index_name)
 
     # ========= EMBEDDINGS =========
